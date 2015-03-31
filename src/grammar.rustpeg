@@ -1,19 +1,24 @@
 use super::{Program, SExpr, Term};
-use super::Term::{RuleOp, Constant, Variable, ExprTerm, Num};
+use super::SExpr::{Func, RuleOp};
+use super::Term::{Constant, Variable, ExprTerm, Num};
 
 #[pub]
 program -> Program
     = __ exprs:sexpr* { Program { sexprs: exprs } }
 
 sexpr -> SExpr
-    = lparen t:term* rparen { SExpr { terms: t }  }
-    / e:constant { SExpr { terms: vec![e] } }
+    = lparen e:func rparen { e }
+    / lparen e:rule_op rparen { e }
+    / e:func { e }
+
+rule_op -> SExpr
+    = '<=' __ t:term* { RuleOp(t) }
+
+func -> SExpr
+    = name:ident t:term* { Func(name, t) }
 
 term -> Term
-    = rule_op / constant / variable / e:sexpr { ExprTerm(e) }
-
-rule_op -> Term
-    = '<=' __ { RuleOp }
+    = constant / variable / e:sexpr { ExprTerm(e) }
 
 constant -> Term
     = name:ident { Constant(name.to_string()) }

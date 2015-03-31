@@ -13,13 +13,13 @@ pub struct Program {
 }
 
 #[derive(Debug, Eq, PartialEq, RustcDecodable, RustcEncodable)]
-pub struct SExpr {
-    terms: Vec<Term>
+pub enum SExpr {
+    Func(String, Vec<Term>),
+    RuleOp(Vec<Term>)
 }
 
 #[derive(Debug, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub enum Term {
-    RuleOp,
     Constant(String),
     Variable(String),
     ExprTerm(SExpr),
