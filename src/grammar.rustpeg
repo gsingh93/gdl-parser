@@ -1,0 +1,46 @@
+use super::{Program, SExpr, Term};
+use super::Term::{RuleOp, Constant, Variable, ExprTerm, Num};
+
+#[pub]
+program -> Program
+    = __ exprs:sexpr* { Program { sexprs: exprs } }
+
+sexpr -> SExpr
+    = lparen t:term* rparen { SExpr { terms: t }  }
+    / e:constant { SExpr { terms: vec![e] } }
+
+term -> Term
+    = rule_op / constant / variable / e:sexpr { ExprTerm(e) }
+
+rule_op -> Term
+    = '<=' __ { RuleOp }
+
+constant -> Term
+    = name:ident { Constant(name.to_string()) }
+    / n:num { Num(n) }
+
+variable -> Term
+    = '?' name:ident { Variable(name.to_string()) }
+
+ident -> String
+    = s:(letter (letter / digit / underscore)* { match_str.to_string() }) __ { s }
+
+underscore -> char
+    = '_' { match_str.char_at(0) }
+
+letter -> char
+    = [a-zA-Z] { match_str.char_at(0) }
+
+digit -> char
+    = [0-9] { match_str.char_at(0) }
+
+num -> u8
+    = i:(digit+ { match_str.parse().unwrap() }) __ { i }
+
+lparen = '(' __
+rparen = ')' __
+
+__ = (whitespace / comment)*
+
+whitespace = [ \t\n]
+comment = ';' (!'\n' .)*

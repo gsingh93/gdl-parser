@@ -1,0 +1,4528 @@
+{
+    "sexprs": [{
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["role"]
+        }, {
+            "variant": "Constant",
+            "fields": ["red"]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["role"]
+        }, {
+            "variant": "Constant",
+            "fields": ["black"]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["base"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["cell"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["m"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["n"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["mark"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["index"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["m"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["index"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["n"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["mark"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["mark"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["base"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["score"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["role"]
+                        }, {
+                            "variant": "Num",
+                            "fields": [0]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["role"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["base"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["score"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["role"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["n"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["role"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["incr"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["m"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["n"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["base"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["control"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["role"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["role"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["base"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["step"]
+                        }, {
+                            "variant": "Num",
+                            "fields": [1]
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["base"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["step"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["n"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["succ"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["m"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["n"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["input"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["move"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["role"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["doublet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["input"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["jump"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["w"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["z"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["role"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["triplet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["input"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["noop"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["role"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["index"]
+        }, {
+            "variant": "Num",
+            "fields": [1]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["index"]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["index"]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["index"]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["index"]
+        }, {
+            "variant": "Num",
+            "fields": [5]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["mark"]
+        }, {
+            "variant": "Constant",
+            "fields": ["black"]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["mark"]
+        }, {
+            "variant": "Constant",
+            "fields": ["red"]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["mark"]
+        }, {
+            "variant": "Constant",
+            "fields": ["blank"]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [1]
+                }, {
+                    "variant": "Num",
+                    "fields": [1]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["black"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [1]
+                }, {
+                    "variant": "Num",
+                    "fields": [2]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["black"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [1]
+                }, {
+                    "variant": "Num",
+                    "fields": [3]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["black"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [1]
+                }, {
+                    "variant": "Num",
+                    "fields": [4]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["black"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [1]
+                }, {
+                    "variant": "Num",
+                    "fields": [5]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["black"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [2]
+                }, {
+                    "variant": "Num",
+                    "fields": [1]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["black"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [2]
+                }, {
+                    "variant": "Num",
+                    "fields": [2]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["black"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [2]
+                }, {
+                    "variant": "Num",
+                    "fields": [3]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["black"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [2]
+                }, {
+                    "variant": "Num",
+                    "fields": [4]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["black"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [2]
+                }, {
+                    "variant": "Num",
+                    "fields": [5]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["black"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [3]
+                }, {
+                    "variant": "Num",
+                    "fields": [1]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["blank"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [3]
+                }, {
+                    "variant": "Num",
+                    "fields": [2]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["blank"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [3]
+                }, {
+                    "variant": "Num",
+                    "fields": [3]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["blank"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [3]
+                }, {
+                    "variant": "Num",
+                    "fields": [4]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["blank"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [3]
+                }, {
+                    "variant": "Num",
+                    "fields": [5]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["blank"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [4]
+                }, {
+                    "variant": "Num",
+                    "fields": [1]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["red"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [4]
+                }, {
+                    "variant": "Num",
+                    "fields": [2]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["red"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [4]
+                }, {
+                    "variant": "Num",
+                    "fields": [3]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["red"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [4]
+                }, {
+                    "variant": "Num",
+                    "fields": [4]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["red"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [4]
+                }, {
+                    "variant": "Num",
+                    "fields": [5]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["red"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [5]
+                }, {
+                    "variant": "Num",
+                    "fields": [1]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["red"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [5]
+                }, {
+                    "variant": "Num",
+                    "fields": [2]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["red"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [5]
+                }, {
+                    "variant": "Num",
+                    "fields": [3]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["red"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [5]
+                }, {
+                    "variant": "Num",
+                    "fields": [4]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["red"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["cell"]
+                }, {
+                    "variant": "Num",
+                    "fields": [5]
+                }, {
+                    "variant": "Num",
+                    "fields": [5]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["red"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["score"]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["red"]
+                }, {
+                    "variant": "Num",
+                    "fields": [0]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["score"]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["black"]
+                }, {
+                    "variant": "Num",
+                    "fields": [0]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["control"]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["red"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["init"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["step"]
+                }, {
+                    "variant": "Num",
+                    "fields": [1]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["legal"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["move"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["control"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["role"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["cell"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["role"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["doublet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["cell"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }, {
+                            "variant": "Constant",
+                            "fields": ["blank"]
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["legal"]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["red"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["jump"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["w"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["z"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["control"]
+                        }, {
+                            "variant": "Constant",
+                            "fields": ["red"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["cell"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Constant",
+                            "fields": ["red"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["triplet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["cell"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["w"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Constant",
+                            "fields": ["black"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["cell"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["z"]
+                        }, {
+                            "variant": "Constant",
+                            "fields": ["blank"]
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["legal"]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["black"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["jump"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["w"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["z"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["control"]
+                        }, {
+                            "variant": "Constant",
+                            "fields": ["black"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["cell"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Constant",
+                            "fields": ["black"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["triplet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["cell"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["w"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Constant",
+                            "fields": ["red"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["cell"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["z"]
+                        }, {
+                            "variant": "Constant",
+                            "fields": ["blank"]
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["legal"]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["red"]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["noop"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["control"]
+                        }, {
+                            "variant": "Constant",
+                            "fields": ["black"]
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["legal"]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["black"]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["noop"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["control"]
+                        }, {
+                            "variant": "Constant",
+                            "fields": ["red"]
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["next"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["cell"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Constant",
+                            "fields": ["blank"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["does"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["move"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["next"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["cell"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["role"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["does"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["move"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["next"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["cell"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["m"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["n"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["mark"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["does"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["move"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["cell"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["m"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["n"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["mark"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["distinctcell"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["m"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["n"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["distinctcell"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["m"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["n"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["next"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["cell"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Constant",
+                            "fields": ["blank"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["does"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["jump"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["w"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["z"]
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["next"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["cell"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["w"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Constant",
+                            "fields": ["blank"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["does"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["jump"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["w"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["z"]
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["next"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["cell"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["z"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["role"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["does"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["jump"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["w"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["z"]
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["next"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["cell"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["m"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["n"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["mark"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["does"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["jump"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["w"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["z"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["cell"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["m"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["n"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["mark"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["distinctcell"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["m"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["n"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["distinctcell"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["m"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["n"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["distinctcell"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["m"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["n"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["next"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["score"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["role"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["n"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["does"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["anyone"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["move"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["score"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["role"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["n"]
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["next"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["score"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["role"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["n"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["does"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["jump"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["u"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["v"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["w"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["x"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["y"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["z"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["score"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["role"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["m"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["incr"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["m"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["n"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["next"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["score"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["role"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["n"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["does"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }, {
+                    "variant": "Constant",
+                    "fields": ["noop"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["score"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["role"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["n"]
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["next"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["control"]
+                        }, {
+                            "variant": "Constant",
+                            "fields": ["black"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["control"]
+                        }, {
+                            "variant": "Constant",
+                            "fields": ["red"]
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["next"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["control"]
+                        }, {
+                            "variant": "Constant",
+                            "fields": ["red"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["control"]
+                        }, {
+                            "variant": "Constant",
+                            "fields": ["black"]
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["next"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["step"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["n"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["step"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["m"]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["succ"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["m"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["n"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["goal"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["role"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["n"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["score"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["role"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["n"]
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "Constant",
+            "fields": ["terminal"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["score"]
+                        }, {
+                            "variant": "Variable",
+                            "fields": ["role"]
+                        }, {
+                            "variant": "Num",
+                            "fields": [100]
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "Constant",
+            "fields": ["terminal"]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["true"]
+                }, {
+                    "variant": "ExprTerm",
+                    "fields": [{
+                        "terms": [{
+                            "variant": "Constant",
+                            "fields": ["step"]
+                        }, {
+                            "variant": "Num",
+                            "fields": [30]
+                        }]
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["distinctcell"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["index"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["index"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["distinct"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["index"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["index"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["distinctcell"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["index"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["index"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["distinct"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["index"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["index"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["doublet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["horizontal"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["doublet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["horizontal"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["doublet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["vertical"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["doublet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["vertical"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["doublet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["slash"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["doublet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["slash"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["doublet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["backslash"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["doublet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["backslash"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["triplet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["horizontal"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["horizontal"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["triplet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["horizontal"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["horizontal"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["triplet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["vertical"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["vertical"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["triplet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["vertical"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["vertical"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["triplet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["slash"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["slash"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["triplet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["slash"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["slash"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["triplet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["backslash"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["backslash"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["triplet"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["backslash"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["z"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["backslash"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["w"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["horizontal"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["nex"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["x"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["index"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": ["RuleOp", {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["vertical"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["nex"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["v"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["y"]
+                }]
+            }]
+        }, {
+            "variant": "ExprTerm",
+            "fields": [{
+                "terms": [{
+                    "variant": "Constant",
+                    "fields": ["index"]
+                }, {
+                    "variant": "Variable",
+                    "fields": ["u"]
+                }]
+            }]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["slash"]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }, {
+            "variant": "Num",
+            "fields": [1]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["slash"]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }, {
+            "variant": "Num",
+            "fields": [1]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["slash"]
+        }, {
+            "variant": "Num",
+            "fields": [5]
+        }, {
+            "variant": "Num",
+            "fields": [1]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["slash"]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["slash"]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["slash"]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }, {
+            "variant": "Num",
+            "fields": [1]
+        }, {
+            "variant": "Num",
+            "fields": [5]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["slash"]
+        }, {
+            "variant": "Num",
+            "fields": [5]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["slash"]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }, {
+            "variant": "Num",
+            "fields": [5]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["backslash"]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }, {
+            "variant": "Num",
+            "fields": [1]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["backslash"]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }, {
+            "variant": "Num",
+            "fields": [5]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["backslash"]
+        }, {
+            "variant": "Num",
+            "fields": [1]
+        }, {
+            "variant": "Num",
+            "fields": [1]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["backslash"]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["backslash"]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["backslash"]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }, {
+            "variant": "Num",
+            "fields": [5]
+        }, {
+            "variant": "Num",
+            "fields": [5]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["backslash"]
+        }, {
+            "variant": "Num",
+            "fields": [1]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["backslash"]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }, {
+            "variant": "Num",
+            "fields": [5]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["nex"]
+        }, {
+            "variant": "Num",
+            "fields": [1]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["nex"]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["nex"]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["nex"]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }, {
+            "variant": "Num",
+            "fields": [5]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["incr"]
+        }, {
+            "variant": "Num",
+            "fields": [0]
+        }, {
+            "variant": "Num",
+            "fields": [10]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["incr"]
+        }, {
+            "variant": "Num",
+            "fields": [10]
+        }, {
+            "variant": "Num",
+            "fields": [20]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["incr"]
+        }, {
+            "variant": "Num",
+            "fields": [20]
+        }, {
+            "variant": "Num",
+            "fields": [30]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["incr"]
+        }, {
+            "variant": "Num",
+            "fields": [30]
+        }, {
+            "variant": "Num",
+            "fields": [40]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["incr"]
+        }, {
+            "variant": "Num",
+            "fields": [40]
+        }, {
+            "variant": "Num",
+            "fields": [50]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["incr"]
+        }, {
+            "variant": "Num",
+            "fields": [50]
+        }, {
+            "variant": "Num",
+            "fields": [60]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["incr"]
+        }, {
+            "variant": "Num",
+            "fields": [60]
+        }, {
+            "variant": "Num",
+            "fields": [70]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["incr"]
+        }, {
+            "variant": "Num",
+            "fields": [70]
+        }, {
+            "variant": "Num",
+            "fields": [80]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["incr"]
+        }, {
+            "variant": "Num",
+            "fields": [80]
+        }, {
+            "variant": "Num",
+            "fields": [90]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["incr"]
+        }, {
+            "variant": "Num",
+            "fields": [90]
+        }, {
+            "variant": "Num",
+            "fields": [100]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [1]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [2]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [3]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [4]
+        }, {
+            "variant": "Num",
+            "fields": [5]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [5]
+        }, {
+            "variant": "Num",
+            "fields": [6]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [6]
+        }, {
+            "variant": "Num",
+            "fields": [7]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [7]
+        }, {
+            "variant": "Num",
+            "fields": [8]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [8]
+        }, {
+            "variant": "Num",
+            "fields": [9]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [9]
+        }, {
+            "variant": "Num",
+            "fields": [10]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [10]
+        }, {
+            "variant": "Num",
+            "fields": [11]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [11]
+        }, {
+            "variant": "Num",
+            "fields": [12]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [12]
+        }, {
+            "variant": "Num",
+            "fields": [13]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [13]
+        }, {
+            "variant": "Num",
+            "fields": [14]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [14]
+        }, {
+            "variant": "Num",
+            "fields": [15]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [15]
+        }, {
+            "variant": "Num",
+            "fields": [16]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [16]
+        }, {
+            "variant": "Num",
+            "fields": [17]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [17]
+        }, {
+            "variant": "Num",
+            "fields": [18]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [18]
+        }, {
+            "variant": "Num",
+            "fields": [19]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [19]
+        }, {
+            "variant": "Num",
+            "fields": [20]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [20]
+        }, {
+            "variant": "Num",
+            "fields": [21]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [21]
+        }, {
+            "variant": "Num",
+            "fields": [22]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [22]
+        }, {
+            "variant": "Num",
+            "fields": [23]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [23]
+        }, {
+            "variant": "Num",
+            "fields": [24]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [24]
+        }, {
+            "variant": "Num",
+            "fields": [25]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [25]
+        }, {
+            "variant": "Num",
+            "fields": [26]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [26]
+        }, {
+            "variant": "Num",
+            "fields": [27]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [27]
+        }, {
+            "variant": "Num",
+            "fields": [28]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [28]
+        }, {
+            "variant": "Num",
+            "fields": [29]
+        }]
+    }, {
+        "terms": [{
+            "variant": "Constant",
+            "fields": ["succ"]
+        }, {
+            "variant": "Num",
+            "fields": [29]
+        }, {
+            "variant": "Num",
+            "fields": [30]
+        }]
+    }]
+}
