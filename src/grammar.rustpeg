@@ -1,4 +1,4 @@
-use super::{Program, Clause, Rule, Sentence, Term, Literal, Constant, Variable, Function,
+use super::{Description, Clause, Rule, Sentence, Term, Literal, Constant, Variable, Function,
             Relation, Proposition, Not, Or, Distinct};
 use super::Clause::{RuleClause, SentenceClause};
 use super::Sentence::{PropSentence, RelSentence};
@@ -6,8 +6,8 @@ use super::Literal::{NotLit, OrLit, DistinctLit, RelLit, PropLit};
 use super::Term::{FuncTerm, VarTerm, ConstTerm};
 
 #[pub]
-program -> Program
-    = __ clauses:clause* { Program { clauses: clauses } }
+description -> Description
+    = __ clauses:clause* { Description { clauses: clauses } }
 
 clause -> Clause
     = r:rule { RuleClause(r) } / s:sentence { SentenceClause(s) }

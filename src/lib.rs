@@ -3,12 +3,12 @@
 
 extern crate rustc_serialize;
 
-use gdl::program;
+use gdl::description;
 
 peg_file! gdl("grammar.rustpeg");
 
 #[derive(Debug, Eq, PartialEq, RustcDecodable, RustcEncodable)]
-pub struct Program {
+pub struct Description {
     pub clauses: Vec<Clause>
 }
 
@@ -89,9 +89,9 @@ pub struct Constant {
     name: String
 }
 
-pub fn parse(s: &str) -> Program {
-    match program(s) {
-        Ok(p) => p,
+pub fn parse(s: &str) -> Description {
+    match description(s) {
+        Ok(d) => d,
         Err(e) => panic!("{}", e)
     }
 }
