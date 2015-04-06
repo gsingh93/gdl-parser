@@ -1,34 +1,74 @@
-use super::{Program, SExpr, Term};
-use super::SExpr::{Func, RuleOp};
-use super::Term::{Constant, Variable, ExprTerm, Num};
+use super::{Program, Clause, Rule, Sentence, Term, Literal, Constant, Variable, Function,
+            Relation, Proposition, Not, Or, Distinct};
+use super::Clause::{RuleClause, SentenceClause};
+use super::Sentence::{PropSentence, RelSentence};
+use super::Literal::{NotLit, OrLit, DistinctLit, RelLit, PropLit};
+use super::Term::{FuncTerm, VarTerm, ConstTerm};
 
 #[pub]
 program -> Program
-    = __ exprs:sexpr* { Program { sexprs: exprs } }
+    = __ clauses:clause* { Program { clauses: clauses } }
 
-sexpr -> SExpr
-    = lparen e:func rparen { e }
-    / lparen e:rule_op rparen { e }
-    / e:func { e }
+clause -> Clause
+    = r:rule { RuleClause(r) } / s:sentence { SentenceClause(s) }
 
-rule_op -> SExpr
-    = '<=' __ t:term* { RuleOp(t) }
+rule -> Rule
+    = lparen rule_tok s:sentence lits:literal* rparen { Rule { head: s, body: lits } }
 
-func -> SExpr
-    = name:ident t:term* { Func(name, t) }
+sentence -> Sentence
+    = l:prop_lit {
+        match l {
+            PropLit(p) => PropSentence(p),
+            _ => panic!("Expected a PropLit, got {:?}", l)
+        }
+    }
+    / ( lparen l:rel_lit rparen {
+        match l {
+            RelLit(p) => RelSentence(p),
+            _ => panic!("Expected a RelLit, got {:?}", l)
+        }
+    })
+
+literal -> Literal
+    = ( lparen l:( or_lit / not_lit / distinct_lit / rel_lit ) rparen { l } ) / prop_lit
+
+not_lit -> Literal
+    = not_tok l:literal { NotLit(Not { lit: Box::new(l) }) }
+
+or_lit -> Literal
+    = or_tok lits:literal* { OrLit(Or { lits: lits }) }
+
+distinct_lit -> Literal
+    = distinct_tok t1:term t2:term { DistinctLit(Distinct { term1: t1, term2: t2}) }
+
+prop_lit -> Literal
+    = name:constant { PropLit(Proposition { name: name }) }
+
+rel_lit -> Literal
+    = name:constant terms:term* { RelLit(Relation { name: name, args: terms }) }
 
 term -> Term
-    = constant / variable / e:sexpr { ExprTerm(e) }
+    = ( lparen t:func_term rparen { t } ) / var_term / const_term
 
-constant -> Term
-    = name:ident { Constant(name.to_string()) }
-    / n:num { Num(n) }
+func_term -> Term
+    = name:constant terms:term* { FuncTerm(Function { name: name, args: terms }) }
 
-variable -> Term
-    = '?' name:ident { Variable(name.to_string()) }
+var_term -> Term
+    = '?' name:constant { VarTerm(Variable { name: name }) }
 
+const_term -> Term
+    = name:constant { ConstTerm(name) }
+
+constant -> Constant
+    = name:ident { Constant{ name: name.to_string() } }
+
+// While `ident`s should normally start with a letter, we'll be treating numeric constants as
+// idents, so we don't enforce that here
 ident -> String
-    = s:(letter (letter / digit / underscore)* { match_str.to_string() }) __ { s }
+    = s:(ident_char+ { match_str.to_string() }) __ { s }
+
+ident_char -> char
+    = letter / digit / underscore
 
 underscore -> char
     = '_' { match_str.char_at(0) }
@@ -39,11 +79,13 @@ letter -> char
 digit -> char
     = [0-9] { match_str.char_at(0) }
 
-num -> u8
-    = i:(digit+ { match_str.parse().unwrap() }) __ { i }
-
 lparen = '(' __
 rparen = ')' __
+rule_tok = '<=' __
+not_tok = 'not' kw__
+or_tok = 'or' kw__
+distinct_tok = 'distinct' kw__
+kw__ = (!ident_char) __
 
 __ = (whitespace / comment)*
 
