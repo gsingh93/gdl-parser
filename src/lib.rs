@@ -4,6 +4,9 @@
 extern crate rustc_serialize;
 
 use gdl::description;
+use self::Sentence::{PropSentence, RelSentence};
+use self::Literal::{NotLit, DistinctLit, OrLit, PropLit, RelLit};
+use self::Term::{VarTerm, FuncTerm, ConstTerm};
 
 peg_file! gdl("grammar.rustpeg");
 
@@ -42,6 +45,15 @@ pub enum Sentence {
     RelSentence(Relation)
 }
 
+impl Into<Literal> for Sentence {
+    fn into(self) -> Literal {
+        match self {
+            PropSentence(p) => PropLit(p),
+            RelSentence(r) => RelLit(r)
+        }
+    }
+}
+
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub enum Literal {
     NotLit(Not),
@@ -65,7 +77,25 @@ pub struct Proposition {
 
 impl Proposition {
     pub fn new(name: Constant) -> Proposition {
-        Proposition { name: name}
+        Proposition { name: name }
+    }
+}
+
+impl Into<Literal> for Proposition {
+    fn into(self) -> Literal {
+        PropLit(self)
+    }
+}
+
+impl Into<Sentence> for Proposition {
+    fn into(self) -> Sentence {
+        PropSentence(self)
+    }
+}
+
+impl Into<Relation> for Proposition {
+    fn into(self) -> Relation {
+        Relation::new(self.name, Vec::new())
     }
 }
 
@@ -81,6 +111,18 @@ impl Relation {
     }
 }
 
+impl Into<Literal> for Relation {
+    fn into(self) -> Literal {
+        RelLit(self)
+    }
+}
+
+impl Into<Sentence> for Relation {
+    fn into(self) -> Sentence {
+        RelSentence(self)
+    }
+}
+
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Not {
     pub lit: Box<Literal>
@@ -92,6 +134,12 @@ impl Not {
     }
 }
 
+impl Into<Literal> for Not {
+    fn into(self) -> Literal {
+        NotLit(self)
+    }
+}
+
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Or {
     pub lits: Vec<Literal>
@@ -100,6 +148,12 @@ pub struct Or {
 impl Or {
     pub fn new(lits: Vec<Literal>) -> Or {
         Or { lits: lits }
+    }
+}
+
+impl Into<Literal> for Or {
+    fn into(self) -> Literal {
+        OrLit(self)
     }
 }
 
@@ -115,6 +169,12 @@ impl Distinct {
     }
 }
 
+impl Into<Literal> for Distinct {
+    fn into(self) -> Literal {
+        DistinctLit(self)
+    }
+}
+
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Variable {
     pub name: Constant
@@ -123,6 +183,12 @@ pub struct Variable {
 impl Variable {
     pub fn new(name: Constant) -> Variable {
         Variable { name: name }
+    }
+}
+
+impl Into<Term> for Variable {
+    fn into(self) -> Term {
+        VarTerm(self)
     }
 }
 
@@ -138,6 +204,12 @@ impl Function {
     }
 }
 
+impl Into<Term> for Function {
+    fn into(self) -> Term {
+        FuncTerm(self)
+    }
+}
+
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Constant {
     pub name: String
@@ -146,6 +218,12 @@ pub struct Constant {
 impl Constant {
     pub fn new(name: String) -> Constant {
         Constant { name: name }
+    }
+}
+
+impl Into<Term> for Constant {
+    fn into(self) -> Term {
+        ConstTerm(self)
     }
 }
 
