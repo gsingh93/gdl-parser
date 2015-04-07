@@ -24,12 +24,12 @@ fn test() {
 
 #[test]
 fn test_to_string() {
-    let sentence = PropSentence(Proposition::new(Constant::new("p".to_string())));
+    let sentence = PropSentence(Proposition::new(Constant::new("p")));
     assert_eq!(sentence.to_string(), "p".to_string());
 
     let sentence = RelSentence(
         Relation::new(Constant::new("p".to_string()),
-                      vec![Constant::new("a".to_string()).into(),
-                           Constant::new("b".to_string()).into()]));
+                      vec![Constant::new("a").into(),
+                           Constant::new("b").into()]));
     assert_eq!(sentence.to_string(), "(p a b)".to_string());
 }

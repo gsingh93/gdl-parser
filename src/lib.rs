@@ -245,8 +245,8 @@ pub struct Constant {
 }
 
 impl Constant {
-    pub fn new(name: String) -> Constant {
-        Constant { name: name }
+    pub fn new<T: Into<String>>(name: T) -> Constant {
+        Constant { name: name.into() }
     }
 }
 
