@@ -54,6 +54,25 @@ impl Into<Literal> for Sentence {
     }
 }
 
+impl ToString for Sentence {
+    fn to_string(&self) -> String {
+        match self {
+            &PropSentence(ref p) => p.name.to_string(),
+            &RelSentence(ref r) => {
+                let mut s = String::new();
+                s.push('(');
+                s.push_str(&r.name.name);
+                for arg in r.args.iter() {
+                    s.push(' ');
+                    s.push_str(arg.name());
+                }
+                s.push(')');
+                s
+            }
+        }
+    }
+}
+
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub enum Literal {
     NotLit(Not),
@@ -68,6 +87,16 @@ pub enum Term {
     VarTerm(Variable),
     FuncTerm(Function),
     ConstTerm(Constant)
+}
+
+impl Term {
+    pub fn name(&self) -> &str {
+        match self {
+            &VarTerm(ref v) => &v.name.name,
+            &FuncTerm(ref f) => &f.name.name,
+            &ConstTerm(ref c) => &c.name
+        }
+    }
 }
 
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
@@ -224,6 +253,12 @@ impl Constant {
 impl Into<Term> for Constant {
     fn into(self) -> Term {
         ConstTerm(self)
+    }
+}
+
+impl ToString for Constant {
+    fn to_string(&self) -> String {
+        self.name.clone()
     }
 }
 
