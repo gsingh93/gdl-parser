@@ -7,30 +7,42 @@ use gdl::description;
 
 peg_file! gdl("grammar.rustpeg");
 
-#[derive(Debug, Eq, PartialEq, RustcDecodable, RustcEncodable)]
+#[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Description {
     pub clauses: Vec<Clause>
 }
 
-#[derive(Debug, Eq, PartialEq, RustcDecodable, RustcEncodable)]
+impl Description {
+    pub fn new(clauses: Vec<Clause>) -> Description {
+        Description { clauses: clauses }
+    }
+}
+
+#[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub enum Clause {
     RuleClause(Rule),
     SentenceClause(Sentence)
 }
 
-#[derive(Debug, Eq, PartialEq, RustcDecodable, RustcEncodable)]
+#[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Rule {
-    head: Sentence,
-    body: Vec<Literal>
+    pub head: Sentence,
+    pub body: Vec<Literal>
 }
 
-#[derive(Debug, Eq, PartialEq, RustcDecodable, RustcEncodable)]
+impl Rule {
+    pub fn new(head: Sentence, body: Vec<Literal>) -> Rule {
+        Rule { head: head, body: body }
+    }
+}
+
+#[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub enum Sentence {
     PropSentence(Proposition),
     RelSentence(Relation)
 }
 
-#[derive(Debug, Eq, PartialEq, RustcDecodable, RustcEncodable)]
+#[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub enum Literal {
     NotLit(Not),
     OrLit(Or),
@@ -39,54 +51,102 @@ pub enum Literal {
     RelLit(Relation)
 }
 
-#[derive(Debug, Eq, PartialEq, RustcDecodable, RustcEncodable)]
+#[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub enum Term {
     VarTerm(Variable),
     FuncTerm(Function),
     ConstTerm(Constant)
 }
 
-#[derive(Debug, Eq, PartialEq, RustcDecodable, RustcEncodable)]
+#[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Proposition {
-    name: Constant
+    pub name: Constant
 }
 
-#[derive(Debug, Eq, PartialEq, RustcDecodable, RustcEncodable)]
+impl Proposition {
+    pub fn new(name: Constant) -> Proposition {
+        Proposition { name: name}
+    }
+}
+
+#[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Relation {
-    name: Constant,
-    args: Vec<Term>
+    pub name: Constant,
+    pub args: Vec<Term>
 }
 
-#[derive(Debug, Eq, PartialEq, RustcDecodable, RustcEncodable)]
+impl Relation {
+    pub fn new(name: Constant, args: Vec<Term>) -> Relation {
+        Relation { name: name, args: args }
+    }
+}
+
+#[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Not {
-    lit: Box<Literal>
+    pub lit: Box<Literal>
 }
 
-#[derive(Debug, Eq, PartialEq, RustcDecodable, RustcEncodable)]
+impl Not {
+    pub fn new(lit: Box<Literal>) -> Not {
+        Not { lit: lit }
+    }
+}
+
+#[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Or {
-    lits: Vec<Literal>
+    pub lits: Vec<Literal>
 }
 
-#[derive(Debug, Eq, PartialEq, RustcDecodable, RustcEncodable)]
+impl Or {
+    pub fn new(lits: Vec<Literal>) -> Or {
+        Or { lits: lits }
+    }
+}
+
+#[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Distinct {
-    term1: Term,
-    term2: Term
+    pub term1: Term,
+    pub term2: Term
 }
 
-#[derive(Debug, Eq, PartialEq, RustcDecodable, RustcEncodable)]
+impl Distinct {
+    pub fn new(term1: Term, term2: Term) -> Distinct {
+        Distinct { term1: term1, term2: term2 }
+    }
+}
+
+#[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Variable {
-    name: Constant
+    pub name: Constant
 }
 
-#[derive(Debug, Eq, PartialEq, RustcDecodable, RustcEncodable)]
+impl Variable {
+    pub fn new(name: Constant) -> Variable {
+        Variable { name: name }
+    }
+}
+
+#[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Function {
-    name: Constant,
-    args: Vec<Term>
+    pub name: Constant,
+    pub args: Vec<Term>
 }
 
-#[derive(Debug, Eq, PartialEq, RustcDecodable, RustcEncodable)]
+impl Function {
+    pub fn new(name: Constant, args: Vec<Term>) -> Function {
+        Function { name: name, args: args }
+    }
+}
+
+#[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Constant {
-    name: String
+    pub name: String
+}
+
+impl Constant {
+    pub fn new(name: String) -> Constant {
+        Constant { name: name }
+    }
 }
 
 pub fn parse(s: &str) -> Description {

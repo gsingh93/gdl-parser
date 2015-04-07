@@ -7,13 +7,13 @@ use super::Term::{FuncTerm, VarTerm, ConstTerm};
 
 #[pub]
 description -> Description
-    = __ clauses:clause* { Description { clauses: clauses } }
+    = __ clauses:clause* { Description::new(clauses) }
 
 clause -> Clause
     = r:rule { RuleClause(r) } / s:sentence { SentenceClause(s) }
 
 rule -> Rule
-    = lparen rule_tok s:sentence lits:literal* rparen { Rule { head: s, body: lits } }
+    = lparen rule_tok head:sentence body:literal* rparen { Rule::new(head, body) }
 
 sentence -> Sentence
     = l:prop_lit {
@@ -33,34 +33,34 @@ literal -> Literal
     = ( lparen l:( or_lit / not_lit / distinct_lit / rel_lit ) rparen { l } ) / prop_lit
 
 not_lit -> Literal
-    = not_tok l:literal { NotLit(Not { lit: Box::new(l) }) }
+    = not_tok l:literal { NotLit(Not::new(Box::new(l))) }
 
 or_lit -> Literal
-    = or_tok lits:literal* { OrLit(Or { lits: lits }) }
+    = or_tok lits:literal* { OrLit(Or::new(lits)) }
 
 distinct_lit -> Literal
-    = distinct_tok t1:term t2:term { DistinctLit(Distinct { term1: t1, term2: t2}) }
+    = distinct_tok t1:term t2:term { DistinctLit(Distinct::new(t1, t2)) }
 
 prop_lit -> Literal
-    = name:constant { PropLit(Proposition { name: name }) }
+    = name:constant { PropLit(Proposition::new(name)) }
 
 rel_lit -> Literal
-    = name:constant terms:term* { RelLit(Relation { name: name, args: terms }) }
+    = name:constant args:term* { RelLit(Relation::new(name, args)) }
 
 term -> Term
     = ( lparen t:func_term rparen { t } ) / var_term / const_term
 
 func_term -> Term
-    = name:constant terms:term* { FuncTerm(Function { name: name, args: terms }) }
+    = name:constant args:term* { FuncTerm(Function::new(name, args)) }
 
 var_term -> Term
-    = '?' name:constant { VarTerm(Variable { name: name }) }
+    = '?' name:constant { VarTerm(Variable::new(name)) }
 
 const_term -> Term
     = name:constant { ConstTerm(name) }
 
 constant -> Constant
-    = name:ident { Constant{ name: name.to_string() } }
+    = name:ident { Constant::new(name.to_string()) }
 
 // While `ident`s should normally start with a letter, we'll be treating numeric constants as
 // idents, so we don't enforce that here
