@@ -54,21 +54,17 @@ impl Into<Literal> for Sentence {
     }
 }
 
+impl Into<Rule> for Sentence {
+    fn into(self) -> Rule {
+        Rule::new(self, Vec::new())
+    }
+}
+
 impl ToString for Sentence {
     fn to_string(&self) -> String {
         match self {
-            &PropSentence(ref p) => p.name.to_string(),
-            &RelSentence(ref r) => {
-                let mut s = String::new();
-                s.push('(');
-                s.push_str(&r.name.name);
-                for arg in r.args.iter() {
-                    s.push(' ');
-                    s.push_str(arg.name());
-                }
-                s.push(')');
-                s
-            }
+            &PropSentence(ref p) => p.to_string(),
+            &RelSentence(ref r) => r.to_string()
         }
     }
 }
@@ -95,6 +91,16 @@ impl Term {
             &VarTerm(ref v) => &v.name.name,
             &FuncTerm(ref f) => &f.name.name,
             &ConstTerm(ref c) => &c.name
+        }
+    }
+}
+
+impl ToString for Term {
+    fn to_string(&self) -> String {
+        match self {
+            &VarTerm(ref v) => v.to_string(),
+            &FuncTerm(ref f) => f.to_string(),
+            &ConstTerm(ref c) => c.to_string()
         }
     }
 }
@@ -128,6 +134,12 @@ impl Into<Relation> for Proposition {
     }
 }
 
+impl ToString for Proposition {
+    fn to_string(&self) -> String {
+        self.name.to_string()
+    }
+}
+
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Relation {
     pub name: Constant,
@@ -149,6 +161,23 @@ impl Into<Literal> for Relation {
 impl Into<Sentence> for Relation {
     fn into(self) -> Sentence {
         RelSentence(self)
+    }
+}
+
+impl ToString for Relation {
+    fn to_string(&self) -> String {
+        let mut s = String::new();
+        s.push('(');
+        s.push_str(&self.name.name);
+        for arg in self.args.iter() {
+            s.push(' ');
+            match arg {
+                &FuncTerm(ref f) => s.push_str(&f.to_string()),
+                t => s.push_str(t.name())
+            }
+        }
+        s.push(')');
+        s
     }
 }
 
@@ -221,6 +250,14 @@ impl Into<Term> for Variable {
     }
 }
 
+impl ToString for Variable {
+    fn to_string(&self) -> String {
+        let mut s = self.name.to_string();
+        s.insert(0, '?');
+        s
+    }
+}
+
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Function {
     pub name: Constant,
@@ -236,6 +273,23 @@ impl Function {
 impl Into<Term> for Function {
     fn into(self) -> Term {
         FuncTerm(self)
+    }
+}
+
+impl ToString for Function {
+    fn to_string(&self) -> String {
+        let mut s = String::new();
+        s.push('(');
+        s.push_str(&self.name.name);
+        for arg in self.args.iter() {
+            s.push(' ');
+            match arg {
+                &FuncTerm(ref f) => s.push_str(&f.to_string()),
+                t => s.push_str(t.name())
+            }
+        }
+        s.push(')');
+        s
     }
 }
 
