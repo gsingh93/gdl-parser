@@ -4,6 +4,7 @@
 extern crate rustc_serialize;
 
 use gdl::description;
+use self::Clause::{RuleClause, SentenceClause};
 use self::Sentence::{PropSentence, RelSentence};
 use self::Literal::{NotLit, DistinctLit, OrLit, PropLit, RelLit};
 use self::Term::{VarTerm, FuncTerm, ConstTerm};
@@ -21,10 +22,32 @@ impl Description {
     }
 }
 
+impl ToString for Description {
+    fn to_string(&self) -> String {
+        let mut s = String::new();
+        for clause in self.clauses.iter() {
+            s.push_str(&clause.to_string());
+            s.push(' ');
+        }
+        let len = s.len();
+        s.remove(len - 1);
+        s
+    }
+}
+
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub enum Clause {
     RuleClause(Rule),
     SentenceClause(Sentence)
+}
+
+impl ToString for Clause {
+    fn to_string(&self) -> String {
+        match self {
+            &RuleClause(ref r) => r.to_string(),
+            &SentenceClause(ref s) => s.to_string(),
+        }
+    }
 }
 
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
@@ -36,6 +59,19 @@ pub struct Rule {
 impl Rule {
     pub fn new(head: Sentence, body: Vec<Literal>) -> Rule {
         Rule { head: head, body: body }
+    }
+}
+
+impl ToString for Rule {
+    fn to_string(&self) -> String {
+        let mut s = String::from_str("(<= ");
+        s.push_str(&self.head.to_string());
+        for arg in self.body.iter() {
+            s.push(' ');
+            s.push_str(&arg.to_string());
+        }
+        s.push(')');
+        s
     }
 }
 
@@ -76,6 +112,18 @@ pub enum Literal {
     DistinctLit(Distinct),
     PropLit(Proposition),
     RelLit(Relation)
+}
+
+impl ToString for Literal {
+    fn to_string(&self) -> String {
+        match self {
+            &NotLit(ref n) => n.to_string(),
+            &OrLit(ref o) => o.to_string(),
+            &DistinctLit(ref d) => d.to_string(),
+            &PropLit(ref p) => p.to_string(),
+            &RelLit(ref r) => r.to_string(),
+        }
+    }
 }
 
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
@@ -171,10 +219,7 @@ impl ToString for Relation {
         s.push_str(&self.name.name);
         for arg in self.args.iter() {
             s.push(' ');
-            match arg {
-                &FuncTerm(ref f) => s.push_str(&f.to_string()),
-                t => s.push_str(t.name())
-            }
+            s.push_str(&arg.to_string());
         }
         s.push(')');
         s
@@ -198,6 +243,15 @@ impl Into<Literal> for Not {
     }
 }
 
+impl ToString for Not {
+    fn to_string(&self) -> String {
+        let mut s = String::from_str("(not ");
+        s.push_str(&self.lit.to_string());
+        s.push(')');
+        s
+    }
+}
+
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Or {
     pub lits: Vec<Literal>
@@ -212,6 +266,18 @@ impl Or {
 impl Into<Literal> for Or {
     fn into(self) -> Literal {
         OrLit(self)
+    }
+}
+
+impl ToString for Or {
+    fn to_string(&self) -> String {
+        let mut s = String::from_str("(or");
+        for l in self.lits.iter() {
+            s.push(' ');
+            s.push_str(&l.to_string());
+        }
+        s.push(')');
+        s
     }
 }
 
@@ -230,6 +296,17 @@ impl Distinct {
 impl Into<Literal> for Distinct {
     fn into(self) -> Literal {
         DistinctLit(self)
+    }
+}
+
+impl ToString for Distinct {
+    fn to_string(&self) -> String {
+        let mut s = String::from_str("(distinct ");
+        s.push_str(&self.term1.to_string());
+        s.push(' ');
+        s.push_str(&self.term2.to_string());
+        s.push(')');
+        s
     }
 }
 
@@ -283,10 +360,7 @@ impl ToString for Function {
         s.push_str(&self.name.name);
         for arg in self.args.iter() {
             s.push(' ');
-            match arg {
-                &FuncTerm(ref f) => s.push_str(&f.to_string()),
-                t => s.push_str(t.name())
-            }
+            s.push_str(&arg.to_string());
         }
         s.push(')');
         s

@@ -23,6 +23,15 @@ fn test() {
 }
 
 #[test]
+fn tests_inverse() {
+    let mut gdl = String::new();
+    let f = File::open("tests/test-alquerque-min.gdl");
+    f.unwrap().read_to_string(&mut gdl).ok().expect("Unable to read GDL file");
+
+    assert_eq!(parse(&gdl).to_string(), gdl.trim());
+}
+
+#[test]
 fn test_to_string() {
     let sentence = PropSentence(Proposition::new(Constant::new("p")));
     assert_eq!(sentence.to_string(), "p".to_string());
