@@ -13,6 +13,13 @@ pub mod visitor;
 
 peg_file! gdl("grammar.rustpeg");
 
+pub fn parse(s: &str) -> Description {
+    match description(s) {
+        Ok(d) => d,
+        Err(e) => panic!("{}", e)
+    }
+}
+
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Description {
     pub clauses: Vec<Clause>
@@ -84,10 +91,10 @@ pub enum Sentence {
 }
 
 impl Sentence {
-    pub fn name(&self) -> Constant {
+    pub fn name(&self) -> &Constant {
         match self {
-            &PropSentence(ref p) => p.name.clone(),
-            &RelSentence(ref r) => r.name.clone()
+            &PropSentence(ref p) => &p.name,
+            &RelSentence(ref r) => &r.name
         }
     }
 }
@@ -145,11 +152,11 @@ pub enum Term {
 }
 
 impl Term {
-    pub fn name(&self) -> Constant {
+    pub fn name(&self) -> &Constant {
         match self {
-            &VarTerm(ref v) => v.name.clone(),
-            &FuncTerm(ref f) => f.name.clone(),
-            &ConstTerm(ref c) => c.clone()
+            &VarTerm(ref v) => &v.name,
+            &FuncTerm(ref f) => &f.name,
+            &ConstTerm(ref c) => c
         }
     }
 }
@@ -398,12 +405,5 @@ impl Into<Term> for Constant {
 impl ToString for Constant {
     fn to_string(&self) -> String {
         self.name.clone()
-    }
-}
-
-pub fn parse(s: &str) -> Description {
-    match description(s) {
-        Ok(d) => d,
-        Err(e) => panic!("{}", e)
     }
 }
