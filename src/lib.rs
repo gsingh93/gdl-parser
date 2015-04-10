@@ -177,8 +177,8 @@ pub struct Proposition {
 }
 
 impl Proposition {
-    pub fn new(name: Constant) -> Proposition {
-        Proposition { name: name }
+    pub fn new<T: Into<Constant>>(name: T) -> Proposition {
+        Proposition { name: name.into() }
     }
 }
 
@@ -213,8 +213,8 @@ pub struct Relation {
 }
 
 impl Relation {
-    pub fn new(name: Constant, args: Vec<Term>) -> Relation {
-        Relation { name: name, args: args }
+    pub fn new<T: Into<Constant>>(name: T, args: Vec<Term>) -> Relation {
+        Relation { name: name.into(), args: args }
     }
 }
 
@@ -334,8 +334,8 @@ pub struct Variable {
 }
 
 impl Variable {
-    pub fn new(name: Constant) -> Variable {
-        Variable { name: name }
+    pub fn new<T: Into<Constant>>(name: T) -> Variable {
+        Variable { name: name.into() }
     }
 }
 
@@ -360,8 +360,8 @@ pub struct Function {
 }
 
 impl Function {
-    pub fn new(name: Constant, args: Vec<Term>) -> Function {
-        Function { name: name, args: args }
+    pub fn new<T: Into<Constant>>(name: T, args: Vec<Term>) -> Function {
+        Function { name: name.into(), args: args }
     }
 }
 
@@ -405,5 +405,11 @@ impl Into<Term> for Constant {
 impl ToString for Constant {
     fn to_string(&self) -> String {
         self.name.clone()
+    }
+}
+
+impl<'a> Into<Constant> for &'a str {
+    fn into(self) -> Constant {
+        Constant::new(self.to_string())
     }
 }
