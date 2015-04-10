@@ -9,6 +9,8 @@ use self::Sentence::{PropSentence, RelSentence};
 use self::Literal::{NotLit, DistinctLit, OrLit, PropLit, RelLit};
 use self::Term::{VarTerm, FuncTerm, ConstTerm};
 
+pub mod visitor;
+
 peg_file! gdl("grammar.rustpeg");
 
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
@@ -81,6 +83,15 @@ pub enum Sentence {
     RelSentence(Relation)
 }
 
+impl Sentence {
+    pub fn name(&self) -> Constant {
+        match self {
+            &PropSentence(ref p) => p.name.clone(),
+            &RelSentence(ref r) => r.name.clone()
+        }
+    }
+}
+
 impl Into<Literal> for Sentence {
     fn into(self) -> Literal {
         match self {
@@ -134,11 +145,11 @@ pub enum Term {
 }
 
 impl Term {
-    pub fn name(&self) -> &str {
+    pub fn name(&self) -> Constant {
         match self {
-            &VarTerm(ref v) => &v.name.name,
-            &FuncTerm(ref f) => &f.name.name,
-            &ConstTerm(ref c) => &c.name
+            &VarTerm(ref v) => v.name.clone(),
+            &FuncTerm(ref f) => f.name.clone(),
+            &ConstTerm(ref c) => c.clone()
         }
     }
 }
