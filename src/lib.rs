@@ -1,3 +1,8 @@
+//! This crate provides a function for parsing a GDL description to an AST. To get an AST, call the
+//! `parse` function with the string representing the description. The AST is based off the
+//! [AST](http://www.ggp.org/developers/gdl.html) used in
+//! [GGP Base](https://github.com/ggp-org/ggp-base).
+
 #![feature(plugin, collections, str_char)]
 #![plugin(peg_syntax_ext)]
 
@@ -13,19 +18,23 @@ pub mod visitor;
 
 peg_file! gdl("grammar.rustpeg");
 
-pub fn parse(s: &str) -> Description {
-    match description(s) {
+/// Parse a GDL string to a `Description`. Panics if the description is invalid.
+pub fn parse(gdl: &str) -> Description {
+    match description(gdl) {
         Ok(d) => d,
         Err(e) => panic!("{}", e)
     }
 }
 
+/// A GDL description. Contains a vector of `Clause`s, which are the top-level statements in
+/// a GDL description.
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Description {
     pub clauses: Vec<Clause>
 }
 
 impl Description {
+    /// Constructs a new description from a vector of `Clause`s
     pub fn new(clauses: Vec<Clause>) -> Description {
         Description { clauses: clauses }
     }
@@ -44,9 +53,14 @@ impl ToString for Description {
     }
 }
 
+/// A top level statement in GDL. The only types of top level statements are `Rule`s and
+/// `Sentence`s
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub enum Clause {
+    // A rule clause
     RuleClause(Rule),
+
+    // A sentence clause
     SentenceClause(Sentence)
 }
 
@@ -59,6 +73,7 @@ impl ToString for Clause {
     }
 }
 
+/// A GDL rule contains a head `Sentence` that is implied by all the `Literal`s in the body
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Rule {
     pub head: Sentence,
@@ -84,13 +99,19 @@ impl ToString for Rule {
     }
 }
 
+/// A GDL sentence is like a `Rule` without a body. The two types of `Sentence`s are `Relation`s
+/// and `Proposition`s
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub enum Sentence {
+    /// A proposition sentence
     PropSentence(Proposition),
+
+    /// A relation sentence
     RelSentence(Relation)
 }
 
 impl Sentence {
+    /// Returns the name of the sentence
     pub fn name(&self) -> &Constant {
         match self {
             &PropSentence(ref p) => &p.name,
@@ -123,6 +144,7 @@ impl ToString for Sentence {
     }
 }
 
+/// A GDL literal
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub enum Literal {
     NotLit(Not),
@@ -144,6 +166,7 @@ impl ToString for Literal {
     }
 }
 
+/// A GDL term is either a variable, a function, or a constant
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub enum Term {
     VarTerm(Variable),
@@ -152,6 +175,7 @@ pub enum Term {
 }
 
 impl Term {
+    /// Returns the name of the term
     pub fn name(&self) -> &Constant {
         match self {
             &VarTerm(ref v) => &v.name,
@@ -171,6 +195,7 @@ impl ToString for Term {
     }
 }
 
+/// A proposition is a `Relation` with no body; it only has a name.
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Proposition {
     pub name: Constant
@@ -206,6 +231,7 @@ impl ToString for Proposition {
     }
 }
 
+/// A GDL relation
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Relation {
     pub name: Constant,
@@ -213,6 +239,7 @@ pub struct Relation {
 }
 
 impl Relation {
+    /// Consruct a new `Relation` given a `name` and a list of `args`
     pub fn new<T: Into<Constant>>(name: T, args: Vec<Term>) -> Relation {
         Relation { name: name.into(), args: args }
     }
@@ -244,6 +271,7 @@ impl ToString for Relation {
     }
 }
 
+/// A not literal
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Not {
     pub lit: Box<Literal>
@@ -270,6 +298,7 @@ impl ToString for Not {
     }
 }
 
+/// An or literal
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Or {
     pub lits: Vec<Literal>
@@ -299,6 +328,7 @@ impl ToString for Or {
     }
 }
 
+/// A distinct literal
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Distinct {
     pub term1: Term,
@@ -328,6 +358,7 @@ impl ToString for Distinct {
     }
 }
 
+/// A variable term
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Variable {
     pub name: Constant
@@ -353,6 +384,7 @@ impl ToString for Variable {
     }
 }
 
+/// A function term
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Function {
     pub name: Constant,
@@ -385,6 +417,7 @@ impl ToString for Function {
     }
 }
 
+/// A GDL constant
 #[derive(Debug, Clone, Hash, Eq, PartialEq, RustcDecodable, RustcEncodable)]
 pub struct Constant {
     pub name: String
