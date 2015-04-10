@@ -26,13 +26,18 @@ use gdl_parser::parse;
 println!("{:?}", parse("(role red) (role black)"));
 ```
 
+Documentation
+-------------
+
+You can find the API docs [here](https://gsingh93.github.io/gdl-parser/doc/gdl_parser/).
+
 Grammar
 -------
 
 Here is the EBNF of the grammar. I came up with this EBNF myself by examining the parsing code in GGP Base, so if there are any bugs please report them.
 
 ```
-program := { rule | sentence }
+description := { rule | sentence }
 
 rule := '(' '<=' sentence { literal } ')'
 
@@ -53,3 +58,8 @@ const_term := constant
 (* ident is any string of letters, digits, and underscores *)
 constant := ident
 ```
+
+License
+-------
+
+[MIT](https://github.com/gsingh93/gdl-parser/blob/master/LICENSE.txt)
