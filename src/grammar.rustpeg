@@ -89,5 +89,5 @@ kw__ = (!ident_char) __
 
 __ = (whitespace / comment)*
 
-whitespace = [ \t\n]
+whitespace = [ \t\n\r]
 comment = ';' (!'\n' .)*
