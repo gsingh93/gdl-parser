@@ -86,6 +86,12 @@ impl Rule {
     }
 }
 
+impl Into<Clause> for Rule {
+    fn into(self) -> Clause {
+        RuleClause(self)
+    }
+}
+
 impl ToString for Rule {
     fn to_string(&self) -> String {
         let mut s = String::from_str("(<= ");
@@ -132,6 +138,12 @@ impl Into<Literal> for Sentence {
 impl Into<Rule> for Sentence {
     fn into(self) -> Rule {
         Rule::new(self, Vec::new())
+    }
+}
+
+impl Into<Clause> for Sentence {
+    fn into(self) -> Clause {
+        SentenceClause(self)
     }
 }
 
