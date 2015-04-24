@@ -8,6 +8,8 @@
 
 extern crate rustc_serialize;
 
+use std::fmt::{Display, Formatter, Error};
+
 use gdl::description;
 use self::Clause::{RuleClause, SentenceClause};
 use self::Sentence::{PropSentence, RelSentence};
@@ -40,8 +42,8 @@ impl Description {
     }
 }
 
-impl ToString for Description {
-    fn to_string(&self) -> String {
+impl Display for Description {
+    fn fmt(&self, f: &mut Formatter) -> Result<(), Error> {
         let mut s = String::new();
         for clause in self.clauses.iter() {
             s.push_str(&clause.to_string());
@@ -49,7 +51,7 @@ impl ToString for Description {
         }
         let len = s.len();
         s.remove(len - 1);
-        s
+        write!(f, "{}", s)
     }
 }
 
@@ -64,11 +66,11 @@ pub enum Clause {
     SentenceClause(Sentence)
 }
 
-impl ToString for Clause {
-    fn to_string(&self) -> String {
+impl Display for Clause {
+    fn fmt(&self, f: &mut Formatter) -> Result<(), Error> {
         match self {
-            &RuleClause(ref r) => r.to_string(),
-            &SentenceClause(ref s) => s.to_string(),
+            &RuleClause(ref r) => Display::fmt(r, f),
+            &SentenceClause(ref s) => Display::fmt(s, f)
         }
     }
 }
@@ -92,16 +94,14 @@ impl Into<Clause> for Rule {
     }
 }
 
-impl ToString for Rule {
-    fn to_string(&self) -> String {
-        let mut s = String::from_str("(<= ");
-        s.push_str(&self.head.to_string());
+impl Display for Rule {
+    fn fmt(&self, f: &mut Formatter) -> Result<(), Error> {
+        let mut s = String::from(&*self.head.to_string());
         for arg in self.body.iter() {
             s.push(' ');
             s.push_str(&arg.to_string());
         }
-        s.push(')');
-        s
+        write!(f, "(<= {})", s)
     }
 }
 
@@ -147,11 +147,11 @@ impl Into<Clause> for Sentence {
     }
 }
 
-impl ToString for Sentence {
-    fn to_string(&self) -> String {
+impl Display for Sentence {
+    fn fmt(&self, f: &mut Formatter) -> Result<(), Error> {
         match self {
-            &PropSentence(ref p) => p.to_string(),
-            &RelSentence(ref r) => r.to_string()
+            &PropSentence(ref p) => Display::fmt(p, f),
+            &RelSentence(ref r) => Display::fmt(r, f)
         }
     }
 }
@@ -166,14 +166,14 @@ pub enum Literal {
     RelLit(Relation)
 }
 
-impl ToString for Literal {
-    fn to_string(&self) -> String {
+impl Display for Literal {
+    fn fmt(&self, f: &mut Formatter) -> Result<(), Error> {
         match self {
-            &NotLit(ref n) => n.to_string(),
-            &OrLit(ref o) => o.to_string(),
-            &DistinctLit(ref d) => d.to_string(),
-            &PropLit(ref p) => p.to_string(),
-            &RelLit(ref r) => r.to_string(),
+            &NotLit(ref n) => Display::fmt(n, f),
+            &OrLit(ref o) => Display::fmt(o, f),
+            &DistinctLit(ref d) => Display::fmt(d, f),
+            &PropLit(ref p) => Display::fmt(p, f),
+            &RelLit(ref r) => Display::fmt(r, f),
         }
     }
 }
@@ -197,12 +197,12 @@ impl Term {
     }
 }
 
-impl ToString for Term {
-    fn to_string(&self) -> String {
+impl Display for Term {
+    fn fmt(&self, f: &mut Formatter) -> Result<(), Error> {
         match self {
-            &VarTerm(ref v) => v.to_string(),
-            &FuncTerm(ref f) => f.to_string(),
-            &ConstTerm(ref c) => c.to_string()
+            &VarTerm(ref v) => Display::fmt(v, f),
+            &FuncTerm(ref func) => Display::fmt(func, f),
+            &ConstTerm(ref c) => Display::fmt(c, f)
         }
     }
 }
@@ -237,9 +237,9 @@ impl Into<Relation> for Proposition {
     }
 }
 
-impl ToString for Proposition {
-    fn to_string(&self) -> String {
-        self.name.to_string()
+impl Display for Proposition {
+    fn fmt(&self, f: &mut Formatter) -> Result<(), Error> {
+        Display::fmt(&self.name, f)
     }
 }
 
@@ -269,17 +269,14 @@ impl Into<Sentence> for Relation {
     }
 }
 
-impl ToString for Relation {
-    fn to_string(&self) -> String {
-        let mut s = String::new();
-        s.push('(');
-        s.push_str(&self.name.name);
+impl Display for Relation {
+    fn fmt(&self, f: &mut Formatter) -> Result<(), Error> {
+        let mut s = String::from(&*self.name.name);
         for arg in self.args.iter() {
             s.push(' ');
             s.push_str(&arg.to_string());
         }
-        s.push(')');
-        s
+        write!(f, "({})", s)
     }
 }
 
@@ -301,12 +298,9 @@ impl Into<Literal> for Not {
     }
 }
 
-impl ToString for Not {
-    fn to_string(&self) -> String {
-        let mut s = String::from_str("(not ");
-        s.push_str(&self.lit.to_string());
-        s.push(')');
-        s
+impl Display for Not {
+    fn fmt(&self, f: &mut Formatter) -> Result<(), Error> {
+        write!(f, "(not {})", self.lit)
     }
 }
 
@@ -328,15 +322,14 @@ impl Into<Literal> for Or {
     }
 }
 
-impl ToString for Or {
-    fn to_string(&self) -> String {
-        let mut s = String::from_str("(or");
+impl Display for Or {
+    fn fmt(&self, f: &mut Formatter) -> Result<(), Error> {
+        let mut s = String::new();
         for l in self.lits.iter() {
             s.push(' ');
             s.push_str(&l.to_string());
         }
-        s.push(')');
-        s
+        write!(f, "(or {})", s)
     }
 }
 
@@ -359,14 +352,9 @@ impl Into<Literal> for Distinct {
     }
 }
 
-impl ToString for Distinct {
-    fn to_string(&self) -> String {
-        let mut s = String::from_str("(distinct ");
-        s.push_str(&self.term1.to_string());
-        s.push(' ');
-        s.push_str(&self.term2.to_string());
-        s.push(')');
-        s
+impl Display for Distinct {
+    fn fmt(&self, f: &mut Formatter) -> Result<(), Error> {
+        write!(f, "(distinct {} {})", self.term1, self.term2)
     }
 }
 
@@ -388,11 +376,11 @@ impl Into<Term> for Variable {
     }
 }
 
-impl ToString for Variable {
-    fn to_string(&self) -> String {
+impl Display for Variable {
+    fn fmt(&self, f: &mut Formatter) -> Result<(), Error> {
         let mut s = self.name.to_string();
         s.insert(0, '?');
-        s
+        write!(f, "?{}", self.name)
     }
 }
 
@@ -415,17 +403,14 @@ impl Into<Term> for Function {
     }
 }
 
-impl ToString for Function {
-    fn to_string(&self) -> String {
-        let mut s = String::new();
-        s.push('(');
-        s.push_str(&self.name.name);
+impl Display for Function {
+    fn fmt(&self, f: &mut Formatter) -> Result<(), Error> {
+        let mut s = String::from(&*self.name.name);
         for arg in self.args.iter() {
             s.push(' ');
             s.push_str(&arg.to_string());
         }
-        s.push(')');
-        s
+        write!(f, "({})", s)
     }
 }
 
@@ -447,9 +432,9 @@ impl Into<Term> for Constant {
     }
 }
 
-impl ToString for Constant {
-    fn to_string(&self) -> String {
-        self.name.clone()
+impl Display for Constant {
+    fn fmt(&self, f: &mut Formatter) -> Result<(), Error> {
+        write!(f, "{}", self.name)
     }
 }
 
