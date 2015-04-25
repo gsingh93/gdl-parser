@@ -1,4 +1,4 @@
-GDL Parser
+GDL Parser [![](https://meritbadge.herokuapp.com/gdl-parser)](https://crates.io/crates/gdl-parser)
 ==========
 
 This is a parser for GDL (game description language). GDL is a subset [Datalog](https://en.wikipedia.org/wiki/Datalog), but when used for GGP (general game playing) it is sent in KIF (knowledge interchange format). This parser focuses on GDL and not KIF for the purpose of GGP and is currently being used in [ggp-rs](https://github.com/gsingh93/ggp-rs).
