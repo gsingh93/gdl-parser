@@ -1,6 +1,6 @@
 [package]
 name = "gdl-parser"
-version = "0.0.7"
+version = "0.0.8"
 authors = ["Gulshan Singh <gulshan@umich.edu>"]
 description = "A parser for GDL (game description language)"
 license = "MIT"
