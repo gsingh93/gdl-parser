@@ -71,13 +71,13 @@ ident_char -> char
     = letter / digit / underscore
 
 underscore -> char
-    = '_' { match_str.char_at(0) }
+    = '_' { match_str.chars().next().unwrap() }
 
 letter -> char
-    = [a-zA-Z] { match_str.char_at(0) }
+    = [a-zA-Z] { match_str.chars().next().unwrap() }
 
 digit -> char
-    = [0-9] { match_str.char_at(0) }
+    = [0-9] { match_str.chars().next().unwrap() }
 
 lparen = '(' __
 rparen = ')' __

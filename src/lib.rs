@@ -3,10 +3,9 @@
 //! [AST](http://www.ggp.org/developers/gdl.html) used in
 //! [GGP Base](https://github.com/ggp-org/ggp-base).
 
-#![feature(plugin, collections, str_char)]
-#![plugin(peg_syntax_ext)]
-
 extern crate rustc_serialize;
+
+mod gdl;
 
 use std::fmt::{Display, Formatter, Error};
 
@@ -17,8 +16,6 @@ use self::Literal::{NotLit, DistinctLit, OrLit, PropLit, RelLit};
 use self::Term::{VarTerm, FuncTerm, ConstTerm};
 
 pub mod visitor;
-
-peg_file! gdl("grammar.rustpeg");
 
 /// Parse a GDL string to a `Description`. Panics if the description is invalid.
 pub fn parse(gdl: &str) -> Description {

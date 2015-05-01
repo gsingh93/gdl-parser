@@ -7,5 +7,4 @@ license = "MIT"
 repository = "https://github.com/gsingh93/gdl-parser"
 
 [dependencies]
-peg = "*"
 rustc-serialize = "*"
